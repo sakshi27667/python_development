@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Dashboard</h1>
+        <form method ="POST">
+            <input type="text" name="city" placeholder="Enter city name" required>
+            <button type="submit"> Get Weather </button>
+        </form>
+        { % if error %}
+        <p class="error">{{ error}}  </p> 
+        { % if error %}
+        { % if weather %}
+        <div class="weather">
+            <h2> "Weather in { {weather.city}},{{ weather.country}}: </h2>
+            <p>Temperature: {{ weather.temp }}°C</p>
+            <p>Feels like: {{ weather.feel_like }}°C</p>
+            <p>Condition: {{ weather.condition }}</p>
+            <p>Humidity: {{ weather.humidity }}%</p>
+            <p>Wind Speed: {{ weather.wind_speed }} m/s</p>
+        </div>
+        { % endif %}
+    </div>
+</body>
+</html>
